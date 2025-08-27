@@ -1,6 +1,7 @@
 import { validateCity, formatDate} from "./validFormat.js";
 import { fetchWeather, parseWeather } from "./weatherAPI.js";
 import { weatherCard, compactWeatherCard, displayCard, displayForecast, displayError } from "./dom.js"
+import './style.css';
 
 const searchInput = document.querySelector(`input[type="text"]`);
 const searchButton = document.querySelector('button');

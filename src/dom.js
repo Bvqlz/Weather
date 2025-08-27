@@ -91,16 +91,22 @@ function displayForecast(weatherData) {
 
 
 function displayError(message) {
-    let errorElement = document.createElement('div');
+    let errorElement = document.querySelector('.error-message');
     if(!errorElement) {
         errorElement = document.createElement('div');
         errorElement.className = 'error-message';
         document.body.appendChild(errorElement);
     }
 
+    if (errorElement.timeoutId) {
+        clearTimeout(errorElement.timeoutId);
+    }
+
     errorElement.textContent = message;
+    errorElement.style.display = 'block';
+
     setTimeout(() => {
-        errorElement.textContent = '';
+        errorElement.style.display = 'none';
     }, 5000)
 }
 
