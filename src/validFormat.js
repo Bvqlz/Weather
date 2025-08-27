@@ -23,4 +23,12 @@ function formatDate(date, time) {
     });
 }
 
-export {validateCity, formatDate};
+function formatCompact(date, time) {
+    const dateObject = new Date(date + 'T12:00:00');
+    return dateObject.toLocaleDateString('en-US', {
+        weekday: 'short',
+        timeZone: time
+    });
+}
+
+export {validateCity, formatDate, formatCompact};

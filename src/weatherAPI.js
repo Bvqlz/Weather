@@ -19,7 +19,7 @@ function parseWeather(data) {
         timezone: data.timezone,
         description: data.description,
         days: data.days.map(day => ({
-            date: day.datatime,
+            date: day.datetime,
             description: day.description,
             temperature: day.temp,
             windSpeed: day.windspeed,
